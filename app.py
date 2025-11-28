@@ -72,7 +72,7 @@ PHONG CÁCH:
 if "model" not in st.session_state:
     try:
         st.session_state.model = genai.GenerativeModel(
-            model_name="gemini-1.5-flash", # Dùng 1.5-flash cho ổn định (2.5 đang preview có thể chưa public cho mọi key)
+            model_name="gemini-2.5-flash", # Dùng 1.5-flash cho ổn định (2.5 đang preview có thể chưa public cho mọi key)
             system_instruction=system_instruction
         )
     except Exception as e:
@@ -144,3 +144,4 @@ if prompt := st.chat_input("Hỏi Thư về sách toán, văn, khoa học..."):
             st.error(f"Oops! Thư đang mất kết nối vũ trụ (Lỗi API): {e}")
     else:
         st.error("AI chưa sẵn sàng. Vui lòng kiểm tra lại API Key.")
+
